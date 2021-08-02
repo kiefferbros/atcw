@@ -1,0 +1,87 @@
+/**
+ * Copyright (C) 2021  Kieffer Bros., LLC
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+// Color Palette
+$fake-grape-0: #E8BFEE;
+$fake-grape-1: #E293EF;
+$fake-grape-2: #D56CE7;
+$fake-grape-3: #B23FC5;
+$fake-grape-4: #8D249E;
+$fake-grape-5: #600C6D;
+
+$stone-gray-0: #F3ECEC;
+$stone-gray-1: #D9D5D5;
+$stone-gray-2: #BABABA;
+$stone-gray-3: #898989;
+$stone-gray-4: #5F5F5F;
+$stone-gray-5: #373737;
+
+$spring-green-0: #B2E3B1;
+$spring-green-1: #6EC86B;
+$spring-green-2: #3DB53A;
+$spring-green-3: #279E24;
+$spring-green-4: #137910;
+$spring-green-5: #125610;
+
+$ruby-red-0: #FEB199;
+$ruby-red-1: #F97B54;
+$ruby-red-2: #F05C2D;
+$ruby-red-3: #DD4110;
+$ruby-red-4: #A63410;
+$ruby-red-5: #80260A;
+
+
+//Theme Colors
+$background-color: white;
+
+$primary-default: $fake-grape-4;
+$primary-juxta: white;
+$primary-hover: $fake-grape-3;
+$primary-active: $fake-grape-2;
+$primary-focus-stroke: $fake-grape-2;
+
+$secondary-default: $stone-gray-0;
+$secondary-juxta: $fake-grape-4;
+$secondary-hover: $stone-gray-1;
+$secondary-active: $fake-grape-0;
+$secondary-focus-stroke: $fake-grape-4;
+
+$tertiary-default: none;
+$tertiary-juxta: $fake-grape-4;
+$tertiary-hover: $stone-gray-0;
+$tertiary-active: $fake-grape-0;
+$tertiary-focus-stroke: $fake-grape-4;
+
+$destrucive-default: $ruby-red-3;
+$destructive-juxta: white;
+$destrucive-hover: $ruby-red-2;
+$destructive-active: $ruby-red-1;
+$destructive-focus-stroke: $ruby-red-1;
+
+$disabled-default: $stone-gray-2;
+$disabled-juxta: $stone-gray-1;
+
+// Theme Typography
+$default-font: 'Poppins', sans-serif;
+
+$default-font-size: 18px;
+$headline-font-size: 40px;
+$h1-font-size: 24px;
+$h2-font-size: 18px;
+$small-font-size: 14px;
+
+$text-color: $stone-gray-5;

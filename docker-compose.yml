@@ -1,0 +1,91 @@
+version: '3.4'
+services:
+  db:
+    container_name: database
+    mem_limit: 500m
+    image: mongo
+    restart: always
+    environment: 
+      - MONGO_INITDB_DATABASE=database
+      - MONGO_INITDB_ROOT_USERNAME_FILE=/run/secrets/mongo-root-user
+      - MONGO_INITDB_ROOT_PASSWORD_FILE=/run/secrets/mongo-root-pass
+      - MONGO_USERNAME_FILE=/run/secrets/mongo-user
+      - MONGO_PASSWORD_FILE=/run/secrets/mongo-pass
+    volumes:
+      - backend-db:/data/db
+      - ./database/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro
+      - ./database/mongod.conf:/etc/mongod.conf:ro
+    secrets:
+      - mongo-root-user
+      - mongo-root-pass
+      - mongo-user
+      - mongo-pass
+    command: mongod --auth
+  backend:
+    container_name: backend
+    mem_limit: 200m
+    image: backend:prod
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+      target: production
+    depends_on:
+      - db
+    environment:
+      - PORT=8000
+      - HOST=${HOST}
+      - NODE_ENV=production
+      - NODE_PATH=dist/
+      - MONGO_URL=mongodb://db:27017/database
+      - MONGO_USERNAME_FILE=/run/secrets/mongo-user
+      - MONGO_PASSWORD_FILE=/run/secrets/mongo-pass
+      - JWT_SECRET_FILE=/run/secrets/jwt-secret
+    secrets:
+      - mongo-user
+      - mongo-pass
+      - jwt-secret
+    restart: always
+    command: npm run serve
+  frontend:
+    container_name: frontend
+    mem_limit: 200m
+    image: frontend:prod
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+      target: production
+    environment:
+      - HTTPS_PORT=${HTTPS_PORT}
+      - HTTP_PORT=${HTTP_PORT}
+      - HOST=${HOST}
+      - BACKEND_PROXY_TARGET=http://backend:8000
+      - NODE_ENV=production
+      - NODE_PATH=dist/
+      - SSL_KEY_FILE=/run/secrets/ssl_key
+      - SSL_CERT_FILE=/run/secrets/ssl_cert
+    secrets:
+      - ssl_key
+      - ssl_cert
+    ports:
+      - ${HTTP_PORT}:${HTTP_PORT}
+      - ${HTTPS_PORT}:${HTTPS_PORT}
+    command: npm run serve
+secrets:
+  mongo-root-user: 
+    file: ./secrets/mongo-root-user
+  mongo-root-pass:
+    file: ./secrets/mongo-root-pass
+  mongo-user: 
+    file: ./secrets/mongo-user
+  mongo-pass:
+    file: ./secrets/mongo-pass
+  jwt-secret:
+    file: ./secrets/jwt-secret
+  ssl_key:
+    file: ${SERVER_SSL_KEY_FILE}
+  ssl_cert:
+    file: ${SERVER_SSL_CERT_FILE}
+volumes:
+  backend-db:
+    external: true
+

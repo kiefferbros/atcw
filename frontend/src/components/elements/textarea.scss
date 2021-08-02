@@ -1,0 +1,131 @@
+/**
+ * Copyright (C) 2021  Kieffer Bros., LLC
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@import '../variables.scss';
+
+.input {
+    position: relative;
+    margin-bottom: 12px;
+    width: 100%;
+    &:not(:only-child) {
+        margin-right: 1rem;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        height: 56px;
+        min-height: 56px;
+        line-height: 1.5;
+        box-sizing: border-box;
+        padding: 14px 0px;
+        border: none;
+        border-bottom: 1px solid $stone-gray-2;
+        font-size: $default-font-size;
+        font-family: $default-font;
+        resize: none;
+        overflow: hidden;
+        // transition: 0.2s;
+        &:focus {
+            border-bottom: 4px solid $primary-default;
+            padding: 22px 0px 6px;
+            & ~ .input__label {
+                top: 0;
+                font-size: $small-font-size;
+                padding-top: 5px;
+                line-height: 16px;
+            }
+            &:hover {
+                border-bottom: 4px solid $primary-default;
+            }
+            &::placeholder {
+                opacity: 1;
+            }
+        }
+        &:hover {
+            border-bottom: 1px solid $primary-default;
+        }
+        &::placeholder {
+            color: $stone-gray-2;
+            opacity: 0;
+            transition: 0.3s;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 14px 0px;
+        font-size: $default-font-size;
+        line-height: 28px;
+        pointer-events: none;
+        transition: 0.3s;
+    }
+
+    &__helperText {
+        font-size: $small-font-size;
+        margin: 4px 0px;
+        min-height: 24px;
+    }
+
+    &.laden {
+        .input__input {
+            padding: 22px 0px 6px;
+            &:focus {
+                padding-bottom: 3px;
+            }
+        }
+        .input__label {
+            top: 0;
+            font-size: $small-font-size;
+            padding-top: 5px;
+            line-height: 16px;
+        }
+    }
+
+    &.error {
+        .input__label {
+            color: $destrucive-default;
+        }
+        .input__input {
+            border-bottom: 1px solid $destrucive-default;
+            border-right: 16px solid $destrucive-default;
+            color: $destrucive-default;
+        }
+        .input__helperText {
+            color: $destrucive-default;
+        }
+    }
+
+    &.-disabled {
+        .input__input {
+            background-color: rgba($stone-gray-2, 0.05);
+            border-bottom: 1px solid rgba($stone-gray-2, 0.5);;
+            color: $stone-gray-2;
+        }
+        .input__label {
+            color: $stone-gray-2;
+        }
+        .input__helperText {
+            color: $stone-gray-2;
+        }
+    }
+}

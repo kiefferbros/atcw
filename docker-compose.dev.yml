@@ -1,0 +1,26 @@
+services:
+  db:
+    ports:
+      - 27017:27017
+  backend:
+    image: backend:dev
+    mem_limit: 2g
+    build:
+      target: base
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./backend/src:/home/node/app/src
+    ports:
+      - 8000:8000
+    command: npm run dev
+  frontend:
+    image: frontend:dev
+    mem_limit: 2g
+    build:
+      target: base
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./frontend/src:/home/node/app/src
+    command: npm run dev

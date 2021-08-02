@@ -1,0 +1,88 @@
+/**
+ * Copyright (C) 2021  Kieffer Bros., LLC
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@import '../variables.scss';
+
+.selectArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    vertical-align: top;
+    max-width: 100%;
+    &__label {
+        line-height: 28px;
+        padding: 14px;
+        pointer-events: none;
+    }
+    &__select {
+        display: inline-block;
+        font-size: $default-font-size;
+        font-family: $default-font;
+        font-weight: bold;
+        color: $secondary-juxta;
+        line-height: 1.3;
+        padding: 16px 48px 16px 20px;
+        box-sizing: border-box;
+        margin: 0;
+        border: none;
+        border-radius: 32px;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: $secondary-default;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.5648 12.8H22.4298C23.3198 12.8 23.7648 13.875 23.1348 14.505L16.7048 20.94C16.3148 21.33 15.6798 21.33 15.2898 20.94L8.8598 14.505C8.2298 13.875 8.6748 12.8 9.5648 12.8Z' fill='%233F80FF'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat, repeat;
+        background-position: right 16px top 50%, 0 0;
+        background-size: 24px auto, 100%;
+        max-width: 100%;
+        &:hover {
+            background-color: $secondary-hover;
+        }
+        &:active {
+            background-color: $secondary-active;
+        }
+        &:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        &.-invalid {
+            border: 1px solid $destrucive-default;
+            background-color: rgba($destrucive-default, 0.1);
+        }
+    }
+    &:not([data='']) {
+        .select__label {
+            padding-top: 8px;
+            font-size: $small-font-size;
+            line-height: 14px;
+        }
+        .select__select {
+            padding-top: 22px;
+            padding-bottom: 6px;
+            color: $text-color;
+        }
+    }
+    option {
+        color: $text-color;
+        padding: 0.25rem;
+        &:disabled {
+            color: $disabled-default;
+        }
+    }
+}

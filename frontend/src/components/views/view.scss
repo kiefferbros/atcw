@@ -1,0 +1,75 @@
+/**
+ * Copyright (C) 2021  Kieffer Bros., LLC
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@import '../variables.scss';
+
+.viewArea {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    top: 0;
+}
+
+.layoutArea {
+    position: absolute;
+    margin: 88px 16px;
+    left: calc(50% - 16px);
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 512px;
+}
+
+.layoutSection {
+    margin: 48px 0;
+}
+
+.buttonArea {
+    text-align: right;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+.headline {
+    font-size: $headline-font-size;
+    line-height: 60px;
+    font-weight: 300;
+    margin: 0 0 32px 0;
+}
+
+.smallPrint {
+    font-size: $small-font-size;
+}
+
+.listArea {
+    margin: 32px -16px;
+}
+
+.tabPanel {
+    margin: 0 -16px 24px;
+}
+
+.story {
+    white-space: pre-wrap;
+}

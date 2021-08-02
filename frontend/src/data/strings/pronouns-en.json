@@ -1,0 +1,23 @@
+{
+    "fem": {
+        "subj": "she",
+        "obj": "her",
+        "pos": "her",
+        "pospr": "hers",
+        "refl": "herself"
+    },
+    "masc": {
+        "subj": "he",
+        "obj": "him",
+        "pos": "his",
+        "pospr": "his",
+        "refl": "himself"
+    },
+    "neut1": {
+        "subj": "they",
+        "obj": "them",
+        "pos": "their",
+        "pospr": "theirs",
+        "refl": "them"
+    }
+}
