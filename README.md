@@ -32,13 +32,13 @@ See docker shell script for additional docker shortcuts
 ## Local Development
 You can develop locally outside of docker containers too.
 
-### Backend
+### Backend Only
 1. `./docker.sh up-db`
 2. `cd backend`
 3. `npm install`
 4. `npm run dev`
 
-### Frontend
+### Frontend Only
 1. `./docker.sh up-backend-dev` or `./docker.sh up-backend-prod`
 2. `cd frontend`
 3. `npm install`
