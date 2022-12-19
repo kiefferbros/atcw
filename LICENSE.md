@@ -1,6 +1,6 @@
-# Licensing Information for HSSS.
+# Licensing Information for ATCW.
 
-The primary license of HSSS is:
+The primary license of ATCW is:
 
    AGPL-3.0-or-later
 
@@ -19,9 +19,9 @@ You should have received a copy of the GNU Affero General Public License
 along with this program in a file in the toplevel directory called
 "agpl-3.0.md". If not, see <https://www.gnu.org/licenses/agpl-3.0.html>.
 
-## Different Licenses for some files in HSSS Repository.
+## Different Licenses for some files in ATCW Repository.
 
-1. Any file in the HSSS repository that does not specify a license, or is
+1. Any file in the ATCW repository that does not specify a license, or is
    not discussed explicitly in this toplevel "LICENSE" file is licensed:
 
    AGPL-3.0-or-later
