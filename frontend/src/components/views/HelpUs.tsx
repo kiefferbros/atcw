@@ -79,8 +79,6 @@ const HelpUsView = (props:INavProps) => {
                     />
                 </div>
             </div>
-
-            <p className={styles.smallPrint}>{services.text.get('help_us/code/small_print')}</p>
         </div>
 
     </div>;
