@@ -20,11 +20,9 @@ import styles from './helpcta.scss';
 import * as services from '../../services';
 import { INavProps } from '../NavProps';
 import HelpUsView from '../views/HelpUs';
-import HeroImage from '../../assets/images/dirk-karks.svg';
 
 const HelpCTA = (props:INavProps) => {
     return <div className={styles.helpCTA} onClick={() => props.nav.push('HelpUsView', () => <HelpUsView nav={props.nav} useNavEffect={props.useNavEffect} />)}>
-        <img className={styles.hero} src={HeroImage} alt={services.text.get('help_us_cta_image_alt')}></img>
         <p>{services.text.get('help_us_cta')}</p>
     </div>;
 }
