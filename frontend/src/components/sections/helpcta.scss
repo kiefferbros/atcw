@@ -18,11 +18,20 @@
 @import '../variables.scss';
 
 .helpCTA{
-    margin: 56px 0 16px;
+    display: block;
+    width: 100%;
+    margin: 56px 0 56px;
     padding: 16px;
     text-align: center;
     border: 1px solid $stone-gray-2;
     border-radius: 16px;
+    background-color: $background-color;
+    cursor: pointer;
+}
+
+.helpCTA p {
+    margin: 0;
+    font-size: $default-font-size;
 }
 
 .hero{
