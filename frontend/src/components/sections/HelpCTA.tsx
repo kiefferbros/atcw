@@ -22,9 +22,9 @@ import { INavProps } from '../NavProps';
 import HelpUsView from '../views/HelpUs';
 
 const HelpCTA = (props:INavProps) => {
-    return <div className={styles.helpCTA} onClick={() => props.nav.push('HelpUsView', () => <HelpUsView nav={props.nav} useNavEffect={props.useNavEffect} />)}>
+    return <button className={styles.helpCTA} onClick={() => props.nav.push('HelpUsView', () => <HelpUsView nav={props.nav} useNavEffect={props.useNavEffect} />)}>
         <p>{services.text.get('help_us_cta')}</p>
-    </div>;
+    </button>;
 }
 
 export default HelpCTA;
