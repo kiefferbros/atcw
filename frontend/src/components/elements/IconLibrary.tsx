@@ -23,7 +23,7 @@ export interface IIconProps {
     className: string;
 }
 
-type IconName = 'checkmark' | 'ex' | 'alert' | 'caretDown' | 'arrowLeft' | 'arrowRight' | 'processing' | 'copy' | 'feedback' | 'sponsor' | 'code' | 'chevronRight';
+type IconName = 'checkmark' | 'ex' | 'alert' | 'caretDown' | 'arrowLeft' | 'arrowRight' | 'processing' | 'copy' | 'feedback' | 'sponsor' | 'code' | 'chevronRight' | 'eyes';
 
 const iconMap = new Map<IconName, (className: string) => JSX.Element>([
     ['checkmark', (className: string) => {
@@ -124,6 +124,16 @@ const iconMap = new Map<IconName, (className: string) => JSX.Element>([
             <svg className={styles[className]} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <title>Chevron Right</title>
                 <path d="M8 5L15 11.5L8 18" stroke="black"/>
+            </svg>
+        );
+    }],
+    ['eyes', (className:string) => {
+        return (
+            <svg className={styles[className]} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="7" cy="12" rx="4" ry="5" stroke="black"/>
+                <circle cx="5" cy="12" r="2" fill="black"/>
+                <circle cx="15" cy="12" r="2" fill="black"/>
+                <ellipse cx="17" cy="12" rx="4" ry="5" stroke="black"/>
             </svg>
         );
     }]
