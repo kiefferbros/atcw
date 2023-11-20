@@ -51,7 +51,7 @@ const RoundForm = (props:IRoundFormProps) => {
             <Button
                 label={props.buttonLabel}
                 type="primary"
-                iconRight={<IconLibrary icon={props.processing ? 'processing' : 'arrowRight'} className="primary"/>}
+                iconRight={<IconLibrary icon={props.processing ? 'processing' : 'arrowRight'} className={valid ? 'primary' : 'disabled'}/>}
                 active={props.processing}
                 onClick={() => props.onSubmit(inputValue)}
                 disabled={!valid}

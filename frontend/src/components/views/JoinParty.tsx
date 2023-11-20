@@ -162,7 +162,7 @@ const JoinPartyView = (props: IJoinPartyProps&INavProps) => {
                     <Button
                         label={text.get('join')}
                         type="primary"
-                        iconRight={<IconLibrary icon={processing ? 'processing' : 'arrowRight'} className="primary" />}
+                        iconRight={<IconLibrary icon={processing ? 'processing' : 'arrowRight'} className={valid ? 'primary' : 'disabled'} />}
                         onClick={submitHandler}
                         disabled={!valid}
                         active={processing}

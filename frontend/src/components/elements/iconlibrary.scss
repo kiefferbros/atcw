@@ -43,6 +43,6 @@
 
 .disabled  {
     & > path, & > circle {
-        stroke: $primary-juxta;
+        stroke: $disabled-juxta !important;
     }
 }
