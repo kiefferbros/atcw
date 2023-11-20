@@ -50,6 +50,7 @@
     &.active {
         & .statusIcon {
             display: inline-block;
+            translate: 0 5px;
         }
         & .listNumber {
             display: none; 
