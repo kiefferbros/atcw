@@ -22,7 +22,6 @@ import IconLibrary from '../elements/IconLibrary';
 import TextArea from '../elements/TextArea';
 
 export interface IRoundFormProps {
-    questionText: string; // tryna pass in html here so the string can be styled with markup
     inputLabel: string;
     inputName: string;
     buttonLabel: string;
