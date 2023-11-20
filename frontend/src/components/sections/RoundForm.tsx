@@ -36,7 +36,6 @@ const RoundForm = (props:IRoundFormProps) => {
     const [valid, setValid] = useState(props.validate(inputValue));
 
     return <form>
-        <h1 dangerouslySetInnerHTML={{__html: props.questionText}}></h1>
         <TextArea
             name={props.inputName}
             label={props.inputLabel}
@@ -46,6 +45,7 @@ const RoundForm = (props:IRoundFormProps) => {
                 setValid(props.validate(value));
             }}
             arrestFocus={true}
+            largeLabel={true}
         />
         <div className={styles.buttonArea}>
             <Button

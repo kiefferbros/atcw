@@ -80,6 +80,11 @@
         transition: 0.3s;
     }
 
+    &__largeLabel {
+        font-size: $h1-font-size;
+        font-weight: bold;
+    }
+
     &__helperText {
         font-size: $small-font-size;
         margin: 4px 0px;
