@@ -29,16 +29,16 @@
     width: 100%;
     justify-content: left;
     cursor: pointer;
-    color: $text-color;
+    color: var(--text-color);
 
     &:hover {
-        background-color: $tertiary-hover;
-        color: $tertiary-juxta;
+        background-color: var(--tertiary-hover);
+        color: var(--tertiary-juxta);
     }
 
     &:active, &.active {
-        background-color: $tertiary-active;
-        color: $tertiary-juxta;
+        background-color: var(--tertiary-active);
+        color: var(--tertiary-juxta);
     }
 }
 
@@ -48,6 +48,6 @@
 }
 
 .button:disabled {
-    color: $disabled-juxta;
+    color: var(--disabled-juxta);
     cursor: not-allowed;
 }

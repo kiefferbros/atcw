@@ -32,11 +32,13 @@ export interface ITextAreaProps {
     initialValue?: string;
     onFocus?: () => void;
     arrestFocus?: boolean;
+    largeLabel?: boolean;
 };
 
 const TextArea = (props:ITextAreaProps) => {
     const textArea = useRef<HTMLTextAreaElement>(null);
     const [value, setState] = React.useState(props.initialValue ?? '');
+    const largeLabel = props.largeLabel;
 
     const handleInputValue = (inputValue: string) => {
         if (textArea.current) {
@@ -65,6 +67,7 @@ const TextArea = (props:ITextAreaProps) => {
     }
 
     return <div className={className}>
+        {largeLabel && <label className={styles.input__largeLabel} htmlFor={props.name}>{props.label}</label>}
         <textarea
             ref={textArea}
             className={styles.input__input}
@@ -77,7 +80,7 @@ const TextArea = (props:ITextAreaProps) => {
             minLength={props.minChars}
         >
         </textarea>
-        <label className={styles.input__label} htmlFor={props.name}>{props.label}</label>
+        {!largeLabel &&<label className={styles.input__label} htmlFor={props.name}>{props.label}</label>}
         <p className={styles.input__helperText}>{props.helpText}</p>
     </div>;
 }

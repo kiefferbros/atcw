@@ -26,7 +26,7 @@
     width: 100%;
     max-width: 512px;
     border-radius: 16px 16px 0 0;
-    background-color: $background-color;
+    background-color: var(--background-color);
     position: absolute;
     bottom: 0;
     left: 50%;

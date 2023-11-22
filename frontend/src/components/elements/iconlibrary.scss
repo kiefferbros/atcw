@@ -19,30 +19,30 @@
 
 .primary {
     & > path, & > circle {
-        stroke: $primary-juxta;
+        stroke: var(--primary-juxta);
     }
 }
 
 .secondary {
     & > path, & > circle {
-        stroke: $secondary-juxta;
+        stroke: var(--secondary-juxta);
     }
 }
 
 .tertiary {
     & > path, & > circle {
-        stroke: $tertiary-juxta;
+        stroke: var(--tertiary-juxta);
     }
 }
 
 .destructive {
     & > path, & > circle {
-        stroke: $destructive-juxta;
+        stroke: var(--destructive-juxta);
     }
 }
 
 .disabled  {
     & > path, & > circle {
-        stroke: $disabled-juxta !important;
+        stroke: var(-disabled-juxta);
     }
 }

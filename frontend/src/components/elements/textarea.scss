@@ -33,18 +33,20 @@
         width: 100%;
         height: 56px;
         min-height: 56px;
+        background-color: var(--background-color);
+        color: var(--text-color);
         line-height: 1.5;
         box-sizing: border-box;
         padding: 14px 0px;
         border: none;
-        border-bottom: 1px solid $stone-gray-2;
+        border-bottom: 1px solid var(--background-color-offset);
         font-size: $default-font-size;
         font-family: $default-font;
         resize: none;
         overflow: hidden;
         // transition: 0.2s;
         &:focus {
-            border-bottom: 4px solid $primary-default;
+            border-bottom: 4px solid var(--primary-default);
             padding: 22px 0px 6px;
             & ~ .input__label {
                 top: 0;
@@ -53,17 +55,17 @@
                 line-height: 16px;
             }
             &:hover {
-                border-bottom: 4px solid $primary-default;
+                border-bottom: 4px solid var(--primary-default);
             }
             &::placeholder {
                 opacity: 1;
             }
         }
         &:hover {
-            border-bottom: 1px solid $primary-default;
+            border-bottom: 1px solid var(--primary-default);
         }
         &::placeholder {
-            color: $stone-gray-2;
+            color: var(--disabled-juxta);
             opacity: 0;
             transition: 0.3s;
         }
@@ -78,6 +80,11 @@
         line-height: 28px;
         pointer-events: none;
         transition: 0.3s;
+    }
+
+    &__largeLabel {
+        font-size: $h1-font-size;
+        font-weight: bold;
     }
 
     &__helperText {
@@ -103,29 +110,29 @@
 
     &.error {
         .input__label {
-            color: $destrucive-default;
+            color: var(--destructive-default);
         }
         .input__input {
-            border-bottom: 1px solid $destrucive-default;
-            border-right: 16px solid $destrucive-default;
-            color: $destrucive-default;
+            border-bottom: 1px solid var(--destructive-default);
+            border-right: 16px solid var(--destructive-default);
+            color: var(--destructive-default);
         }
         .input__helperText {
-            color: $destrucive-default;
+            color: var(--destructive-default);
         }
     }
 
     &.-disabled {
         .input__input {
-            background-color: rgba($stone-gray-2, 0.05);
-            border-bottom: 1px solid rgba($stone-gray-2, 0.5);;
-            color: $stone-gray-2;
+            background-color: var(--disabled-default);
+            border-bottom: 1px solid var(--disabled-default);
+            color: var(--disabled-juxta);
         }
         .input__label {
-            color: $stone-gray-2;
+            color: var(--disabled-juxta);
         }
         .input__helperText {
-            color: $stone-gray-2;
+            color: var(--disabled-juxta);
         }
     }
 }
