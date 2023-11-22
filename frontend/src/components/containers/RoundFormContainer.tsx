@@ -28,7 +28,6 @@ import ErrorModal from "../views/ErrorModal";
 import { CancelActionType, ICancelReducerProps } from "../../hooks/useCancelReducer";
 
 export interface IFormQuestion {
-    textKey: string;
     labelKey: string;
     inputName: string;
     missingKey: string;
@@ -67,10 +66,8 @@ export default (props: IRoundFormContainerProps&INavProps&ICancelReducerProps) =
         services.text.get('gameplay/person_two')
     );
 
-    let questionText = services.text.get(props.question.textKey);
     let inputLabel = services.text.get(props.question.labelKey);
     if (first) {
-        questionText = questionText.replace(firstMatch, first);
         const idx = inputLabel.search(firstMatch);
         if (idx !== -1) {
             inputLabel = inputLabel.replace(firstMatch, idx === 0 ? capitalize(first) : first);
@@ -78,7 +75,6 @@ export default (props: IRoundFormContainerProps&INavProps&ICancelReducerProps) =
     }
 
     if (second) {
-        questionText = questionText.replace(secondMatch, second);
         const idx = inputLabel.search(secondMatch);
         if (idx !== -1) {
             inputLabel = inputLabel.replace(secondMatch, idx === 0 ? capitalize(second) : second);
@@ -117,7 +113,6 @@ export default (props: IRoundFormContainerProps&INavProps&ICancelReducerProps) =
     };
 
     return <RoundForm
-        questionText={questionText}
         inputLabel={inputLabel}
         inputName={props.question.inputName}
         buttonLabel={services.text.get(props.index === 7 ? 'gameplay/finish' : 'gameplay/next')}

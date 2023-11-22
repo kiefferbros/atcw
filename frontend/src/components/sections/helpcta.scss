@@ -23,9 +23,9 @@
     margin: 56px 0 56px;
     padding: 16px;
     text-align: center;
-    border: 1px solid $stone-gray-2;
+    border: 1px solid var(--background-color-offset);
     border-radius: 16px;
-    background-color: $background-color;
+    background-color: var(--background-color);
     cursor: pointer;
 }
 

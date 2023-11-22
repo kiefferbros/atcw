@@ -44,12 +44,21 @@
 
 .app {
     font-family: $default-font;
-    color: $text-color;
+    color: var(--text-color);
     font-size: $default-font-size;
+    background-color: var(--background-color);
+}
+
+button {
+    color: var(--text-color);
 }
 
 p {
     margin: 0 0 12px 0;
+}
+
+a {
+    color: var(--secondary-juxta);
 }
 
 h1 {

@@ -38,16 +38,16 @@ export interface IPlayerListItemProps {
 const PlayerListItem: FC<IPlayerListItemProps> = (props) => {
 
     let className = styles.playerListItem;
-    if (props.status === PlayerStatusCode.Done || props.status === PlayerStatusCode.Left) {
+    const observing = props.inLobbyIsObserving && props.status === PlayerStatusCode.InLobby;
+    if (props.status === PlayerStatusCode.Done || props.status === PlayerStatusCode.Left || observing) {
         className += ' ' + styles.active;
-    } else if (props.inLobbyIsObserving && props.status === PlayerStatusCode.InLobby) {
-        className += ' ' + styles.inactive;
     }
 
     const playerName = props.isPlayer ? props.name + ' ' + text.get('player_list/you') : props.name;
+    const iconName = observing ? "eyes" : props.status === PlayerStatusCode.Done ? 'checkmark' : 'ex'
 
     return <li className={className} key={props.name}>
-        <span className={styles.listNumber}>{props.number}.</span><span className={styles.statusIcon}><IconLibrary icon={props.status === PlayerStatusCode.Done ? 'checkmark' : 'ex'} className="tertiary" /></span> {playerName}
+        <span className={styles.listNumber}>{props.number}.</span><span className={styles.statusIcon}><IconLibrary icon={iconName} className="tertiary" /></span> {playerName}
     </li>;
 }
 

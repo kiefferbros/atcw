@@ -15,66 +15,6 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-// Color Palette
-$fake-grape-0: #E8BFEE;
-$fake-grape-1: #E293EF;
-$fake-grape-2: #D56CE7;
-$fake-grape-3: #B23FC5;
-$fake-grape-4: #8D249E;
-$fake-grape-5: #600C6D;
-
-$stone-gray-0: #F3ECEC;
-$stone-gray-1: #D9D5D5;
-$stone-gray-2: #BABABA;
-$stone-gray-3: #898989;
-$stone-gray-4: #5F5F5F;
-$stone-gray-5: #373737;
-
-$spring-green-0: #B2E3B1;
-$spring-green-1: #6EC86B;
-$spring-green-2: #3DB53A;
-$spring-green-3: #279E24;
-$spring-green-4: #137910;
-$spring-green-5: #125610;
-
-$ruby-red-0: #FEB199;
-$ruby-red-1: #F97B54;
-$ruby-red-2: #F05C2D;
-$ruby-red-3: #DD4110;
-$ruby-red-4: #A63410;
-$ruby-red-5: #80260A;
-
-
-//Theme Colors
-$background-color: white;
-
-$primary-default: $fake-grape-4;
-$primary-juxta: white;
-$primary-hover: $fake-grape-3;
-$primary-active: $fake-grape-2;
-$primary-focus-stroke: $fake-grape-2;
-
-$secondary-default: $stone-gray-0;
-$secondary-juxta: $fake-grape-4;
-$secondary-hover: $stone-gray-1;
-$secondary-active: $fake-grape-0;
-$secondary-focus-stroke: $fake-grape-4;
-
-$tertiary-default: none;
-$tertiary-juxta: $fake-grape-4;
-$tertiary-hover: $stone-gray-0;
-$tertiary-active: $fake-grape-0;
-$tertiary-focus-stroke: $fake-grape-4;
-
-$destrucive-default: $ruby-red-3;
-$destructive-juxta: white;
-$destrucive-hover: $ruby-red-2;
-$destructive-active: $ruby-red-1;
-$destructive-focus-stroke: $ruby-red-1;
-
-$disabled-default: $stone-gray-2;
-$disabled-juxta: $stone-gray-1;
-
 // Theme Typography
 $default-font: 'Poppins', sans-serif;
 
@@ -84,4 +24,112 @@ $h1-font-size: 24px;
 $h2-font-size: 18px;
 $small-font-size: 14px;
 
-$text-color: $stone-gray-5;
+:root {
+    // Color Palette
+    /* Raspberry Jam */
+    --raspberry-jam-8: #38000e; 
+    --raspberry-jam-10: #3f0011; 
+    --raspberry-jam-15: #540019; 
+    --raspberry-jam-24: #780028; 
+    --raspberry-jam-37: #af003e; 
+    --raspberry-jam-53: #f4215e; 
+    --raspberry-jam-69: #ff8395; 
+    --raspberry-jam-82: #ffb9c1; 
+    --raspberry-jam-91: #ffdddf; 
+    --raspberry-jam-96: #fff1f1; 
+    --raspberry-jam-98: #fff8f7; 
+
+    /* Fake Grape */
+    --fake-grape-8: #2f0038; 
+    --fake-grape-10: #35003e; 
+    --fake-grape-15: #470053; 
+    --fake-grape-24: #660077; 
+    --fake-grape-37: #8f21a1; 
+    --fake-grape-53: #bd50cd; 
+    --fake-grape-69: #ee7cfc; 
+    --fake-grape-82: #fbb3ff; 
+    --fake-grape-91: #ffd9fd; 
+    --fake-grape-96: #fff0fb; 
+    --fake-grape-98: #fff7fa; 
+
+    /* Sky Gray */
+    --sky-gray-8: #10191e; 
+    --sky-gray-10: #141c22; 
+    --sky-gray-15: #1f272d; 
+    --sky-gray-24: #323b41; 
+    --sky-gray-37: #4f585e; 
+    --sky-gray-53: #778087; 
+    --sky-gray-69: #a1aab2; 
+    --sky-gray-82: #c4cdd4; 
+    --sky-gray-91: #dde6ee; 
+    --sky-gray-96: #ecf5fd; 
+    --sky-gray-98: #f5faff; 
+
+    //Theme Colors
+
+    --background-color: white;
+    --background-color-offset: var(--sky-gray-69);
+    --text-color: var(--sky-gray-15);
+
+    --primary-default: var(--fake-grape-37);
+    --primary-juxta: white;
+    --primary-hover: var(--fake-grape-53);
+    --primary-active: var(--fake-grape-69);
+    --primary-focus-stroke: var(--fake-grape-69);
+
+    --secondary-default: var(--sky-gray-96);
+    --secondary-juxta: var(--fake-grape-37);
+    --secondary-hover: var(--sky-gray-91);
+    --secondary-active: var(--fake-grape-82);
+    --secondary-focus-stroke: var(--fake-grape-37);
+
+    --tertiary-default: none;
+    --tertiary-juxta: var(--fake-grape-37);
+    --tertiary-hover: var(--fake-grape-91);
+    --tertiary-active: var(--fake-grape-82);
+    --tertiary-focus-stroke: var(--fake-grape-37);
+
+    --destructive-default: var(--raspberry-jam-53);
+    --destructive-juxta: white;
+    --destructive-hover: var(--raspberry-jam-37);
+    --destructive-active: var(--raspberry-jam-24);
+    --destructive-focus-stroke: var(--raspberry-jam-24);
+
+    --disabled-default: var(--sky-gray-82);
+    --disabled-juxta: var(--sky-gray-53);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: var(--sky-gray-15);
+        --background-color-offset: var(--sky-gray-37);
+        --text-color: var(--sky-gray-91);
+
+        --primary-default: var(--fake-grape-69);
+        --primary-juxta: black;
+        --primary-hover: var(--fake-grape-82);
+        --primary-active: var(--fake-grape-91);
+        --primary-focus-stroke: var(--fake-grape-82);
+
+        --secondary-default: var(--sky-gray-24);
+        --secondary-juxta: var(--fake-grape-69);
+        --secondary-hover: var(--sky-gray-37);
+        --secondary-active: var(--fake-grape-37);
+        --secondary-focus-stroke: var(--fake-grape-82);
+
+        --tertiary-default: none;
+        --tertiary-juxta: var(--fake-grape-69);
+        --tertiary-hover: var(--sky-gray-24);
+        --tertiary-active: var(--fake-grape-37);
+        --tertiary-focus-stroke: var(--fake-grape-82);
+    
+        --destructive-default: var(--raspberry-jam-53);
+        --destructive-juxta: white;
+        --destructive-hover: var(--raspberry-jam-37);
+        --destructive-active: var(--raspberry-jam-24);
+        --destructive-focus-stroke: var(--raspberry-jam-24);
+    
+        --disabled-default: var(--sky-gray-24);
+        --disabled-juxta: var(--sky-gray-53);
+    }
+}

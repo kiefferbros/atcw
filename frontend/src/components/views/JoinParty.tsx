@@ -28,9 +28,7 @@ import LobbyView from './Lobby';
 import axios, { CancelTokenSource } from 'axios';
 import ErrorModal from './ErrorModal';
 import { HttpStatus } from '../../services/api_client';
-import CheeseImage1 from '../../assets/images/cheese@1x.png';
-import CheeseImage2 from '../../assets/images/cheese@2x.png';
-import CheeseImage3 from '../../assets/images/cheese@3x.png';
+import CheeseImage1 from '../../assets/images/cheese.svg';
 import useCancelReducer, { CancelActionType } from '../../hooks/useCancelReducer';
 
 export interface IJoinPartyProps {
@@ -135,8 +133,8 @@ const JoinPartyView = (props: IJoinPartyProps&INavProps) => {
     return <div className={styles.viewArea}>
         <Header leftButton={leftButton} />
 
-        <div className={styles.layoutArea}>
-            <img src={CheeseImage1} srcSet={CheeseImage2 + ' 2x, ' + CheeseImage3 + ' 3x'} alt="cheese" width="63" height="75" />
+        <div className={styles.layoutArea} style={{backgroundColor: "var(--background-color)"}}>
+            <img src={CheeseImage1} alt="cheese" width="63" height="75" />
             <h1>{text.get('join_a_party')}</h1>
             <form>
                 <TextInput
@@ -162,7 +160,7 @@ const JoinPartyView = (props: IJoinPartyProps&INavProps) => {
                     <Button
                         label={text.get('join')}
                         type="primary"
-                        iconRight={<IconLibrary icon={processing ? 'processing' : 'arrowRight'} className="primary" />}
+                        iconRight={<IconLibrary icon={processing ? 'processing' : 'arrowRight'} className={valid ? 'primary' : 'disabled'} />}
                         onClick={submitHandler}
                         disabled={!valid}
                         active={processing}

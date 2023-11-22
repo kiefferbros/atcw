@@ -28,9 +28,7 @@ import LobbyView from './Lobby';
 import axios from 'axios';
 import useCancelReducer, { CancelActionType } from '../../hooks/useCancelReducer';
 import ErrorModal from './ErrorModal';
-import KnifeImage1 from '../../assets/images/knife@1x.png';
-import KnifeImage2 from '../../assets/images/knife@2x.png';
-import KnifeImage3 from '../../assets/images/knife@3x.png';
+import KnifeImage1 from '../../assets/images/knife.svg';
 
 const CreatePartyView = (props:INavProps) => {
     const [playerName, setPlayerName] = useState(prefs.get<string>('playerName') ?? '');
@@ -88,8 +86,8 @@ const CreatePartyView = (props:INavProps) => {
         <Header leftButton={leftButton} />
 
         <div className={styles.layoutArea}>
-            <form>
-                <img src={KnifeImage1} srcSet={KnifeImage2 + ' 2x, ' + KnifeImage3 + ' 3x'} alt="knife" width="102" height="151" />
+            <form style={{backgroundColor: "var(--background-color)"}}>
+                <img src={KnifeImage1} alt="knife" width="102" height="151" />
                 <h1>{text.get('start_a_new_party')}</h1>
                 <TextInput
                     name="player-name"
@@ -101,7 +99,7 @@ const CreatePartyView = (props:INavProps) => {
                     <Button
                         label={text.get('start')}
                         type="primary"
-                        iconRight={<IconLibrary icon={processing ? "processing" : "arrowRight"} className="primary" />}
+                        iconRight={<IconLibrary icon={processing ? "processing" : "arrowRight"} className={valid ? 'primary' : 'disabled'} />}
                         onClick={submitHandler}
                         disabled={!valid}
                         active={processing}
