@@ -1,40 +1,34 @@
 [
     {
-        "textKey": "gameplay/q1",
         "labelKey": "gameplay/q1_label",
         "inputName": "person-1-name",
         "missingKey": "results/missing_name_1",
         "firstForm": "pos"
     },
     {
-        "textKey": "gameplay/q2",
         "labelKey": "gameplay/q2_label",
         "inputName": "person-2-name",
         "missingKey": "results/missing_name_2",
         "secondForm": "pos"
     },
     {
-        "textKey": "gameplay/q3",
         "labelKey": "gameplay/q3_label",
         "inputName": "met-at",
         "missingKey": "results/missing_met_at"
     },
     {
-        "textKey": "gameplay/q4",
         "labelKey": "gameplay/q4_label",
         "inputName": "person-1-attire",
         "missingKey": "results/missing_wore_1",
         "firstForm": "subj"
     },
     {
-        "textKey": "gameplay/q5",
         "labelKey": "gameplay/q5_label",
         "inputName": "person-2-attire",
         "missingKey": "results/missing_wore_2",
         "secondForm": "subj"
     },
     {
-        "textKey": "gameplay/q6",
         "labelKey": "gameplay/q6_label",
         "inputName": "person-1-said",
         "missingKey": "results/missing_said_1",
@@ -42,7 +36,6 @@
         "secondForm": "obj"
     },
     {
-        "textKey": "gameplay/q7",
         "labelKey": "gameplay/q7_label",
         "inputName": "person-2-said",
         "missingKey": "results/missing_said_2",
@@ -50,7 +43,6 @@
         "secondForm": "subj"
     },
     {
-        "textKey": "gameplay/q8",
         "labelKey": "gameplay/q8_label",
         "inputName": "and-the-consquences-were",
         "missingKey": "results/missing_atcw",
