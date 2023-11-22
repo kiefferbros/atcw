@@ -24,10 +24,7 @@ import AboutView from './About';
 import JoinPartyView from './JoinParty';
 import CreatePartyView from './CreateParty';
 import { INavProps } from '../NavProps';
-import TitleImage1 from '../../assets/images/knife-cheese-hand@1x.png';
-import TitleImage2 from '../../assets/images/knife-cheese-hand@2x.png';
-import TitleImage3 from '../../assets/images/knife-cheese-hand@3x.png';
-
+import TitleImage1 from '../../assets/images/knife-cheese-hand.svg';
 
 const StartView = (props: INavProps) => {
 
@@ -40,8 +37,8 @@ const StartView = (props: INavProps) => {
     return <div className={styles.viewArea}>
         <Header rightButton={rightButton} />
 
-        <div className={styles.layoutArea}>
-            <img src={TitleImage1} srcSet={TitleImage2 + ' 2x, ' + TitleImage3 + ' 3x'} alt="knife, cheese, and hand" width="109" height="235" />
+        <div className={styles.layoutArea} style={{backgroundColor: "var(--background-color)"}}>
+            <img src={TitleImage1} alt="knife, cheese, and hand" width="109" height="235" />
             <h1 className={styles.headline}>{services.text.get('game_title')}</h1>
             <div className={styles.buttonArea}>
                 <Button
