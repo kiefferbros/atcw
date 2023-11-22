@@ -88,7 +88,7 @@ export default (props: INavProps & IWaitingProps & ICancelReducerProps)=> {
                         message={text.get('lobby/end_round_message')}
                         primaryButton={{
                             label: text.get('lobby/end_round_confirm'),
-                            type: 'primary',
+                            type: 'destructive',
                             onClick: endRound
                         }}
                         secondaryButton={{
