@@ -18,31 +18,31 @@
 @import '../variables.scss';
 
 .primary {
-    & > path, & > circle {
+    & > path, & > circle, & > ellipse {
         stroke: var(--primary-juxta);
     }
 }
 
 .secondary {
-    & > path, & > circle {
+    & > path, & > circle, & > ellipse {
         stroke: var(--secondary-juxta);
     }
 }
 
 .tertiary {
-    & > path, & > circle {
+    & > path, & > circle, & > ellipse {
         stroke: var(--tertiary-juxta);
     }
 }
 
 .destructive {
-    & > path, & > circle {
+    & > path, & > circle, & > ellipse {
         stroke: var(--destructive-juxta);
     }
 }
 
 .disabled  {
-    & > path, & > circle {
+    & > path, & > circle, & > ellipse {
         stroke: var(--disabled-juxta);
     }
 }

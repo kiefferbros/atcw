@@ -131,8 +131,8 @@ const iconMap = new Map<IconName, (className: string) => JSX.Element>([
         return (
             <svg className={styles[className]} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <ellipse cx="7" cy="12" rx="4" ry="5" stroke="black"/>
-                <circle cx="5" cy="12" r="2" fill="black"/>
-                <circle cx="15" cy="12" r="2" fill="black"/>
+                <circle cx="5" cy="12" r="1" stroke="black" strokeWidth="3"/>
+                <circle cx="15" cy="12" r="1" stroke="black" strokeWidth="3"/>
                 <ellipse cx="17" cy="12" rx="4" ry="5" stroke="black"/>
             </svg>
         );
