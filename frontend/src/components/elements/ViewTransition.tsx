@@ -181,6 +181,8 @@ const ViewTransition:FC<IViewTransitionProps> = (props) => {
                 props.onStart();
             }
 
+            window.scroll({left: 0, top: 0, behavior: "smooth"});
+
             window.setTimeout(() => {
                 curr.position = Position.Center;
                 if (prev) {
